@@ -1,0 +1,45 @@
+# IDE & System
+.cursor/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.p12
+
+# OpenClaw Config & State (CRITICAL: Protect your keys and sessions)
+config
+**/auth-profiles.json
+.clawhub
+
+# Data & Database
+data/
+logs/
+*.sqlite
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Dependencies
+node_modules/
+dist/
+build/
+.npm/
+.pnpm-store/
+
+# Temporary files
+tmp/
+temp/
+/var/tmp/
+/tmp/
+
+# Docker
+.docker/

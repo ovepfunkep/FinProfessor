@@ -1,0 +1,20 @@
+services:
+  openclaw-agent:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: openclaw_fin_agent
+    restart: unless-stopped
+    ports:
+      - "18789:18789" # Порт Gateway OpenClaw
+    volumes:
+      - .:/app        # Пробрасываем всю директорию, чтобы SOUL.md и навыки обновлялись без ребилда
+      - ./config:/root/.openclaw # Сохраняем настройки OpenClaw между рестартами контейнера
+    env_file:
+      - .env
+    networks:
+      - fin_agent_net
+
+networks:
+  fin_agent_net:
+    driver: bridge
